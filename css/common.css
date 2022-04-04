@@ -1,61 +1,355 @@
-@charset "utf-8";
-*{ moz-user-select: -moz-none; -moz-user-select: none; -o-user-select:none; -khtml-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none; }
-*{ -webkit-tap-highlight-color: transparent; border: 0; }
-*, *:before, *:after {margin:0; padding:0; outline: 0; }
-body{ font-family: "microsoft yahei",Verdana, Arial, 微软雅黑; cursor: url( ../img/a1.png ), auto; }
-ul,ol,li{ list-style: none; }
-img,span,a,dt{ display: inline-block; }
-a{ text-decoration: none; color: #333; cursor: url(../img/a2.png),pointer;}
-h1,h2,h3{ font-size: 16px; }
-.indent-40{ text-indent: 40px; }
-.indent-60{ text-indent: 60px; }
-.l{ float: left; }
-.r{ float: right; }
-.clearfix{ zoom: 1; }
-.clearfix:before, .clearfix:after{ content: ""; display: block; clear: both; }
-.container-fluid{ width: 100%; text-align: center; }
+* {
+  /*相关按钮及子元素的文本将不可选*/
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  /*移动端禁止选中内容*/
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*“transparent是全透明黑色(black)的速记法*/
+  -webkit-tap-highlight-color: transparent;
+  border: 0;/*无边框颜色*/
+}
 
-body { color: #333; background: #559664 ; background-size: 100%; }
+/*
+outline （轮廓）是绘制于元素周围的一条线，
+位于边框边缘的外围，可起到突出元素的作用。
+注释：轮廓线不会占据空间，也不一定是矩形。
+*/
+*,*:before, *:after {
+  margin: 0;/*外边距，内边距，边框线*/
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  /*font-family 可以把多个字体名称作为一个"回退"系统来保存。
+  如果浏览器不支持第一个字体，则会尝试下一个。*/
+  font-family: "microsoft yahei", Verdana, Arial, 微软雅黑;
+  cursor: url(../img/a1.png), auto;
+}
+
+ul,ol,li {
+  /*list-style 简写属性在一个声明中设置所有的列表属性。*/
+  list-style: none;
+}
+
+img,span,a,dt {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  cursor: url(../img/a2.png), pointer;
+}
+
+h1,h2,h3 {
+  font-size: 16px;
+}
+
+.indent-40 {
+  text-indent: 40px;
+}
+
+.indent-60 {
+  text-indent: 60px;
+}
+
+.l {
+  float: left;
+}
+
+.r {
+  float: right;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before,.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container-fluid {
+  width: 100%;
+  text-align: center;
+}
+
+body {
+  color: #333;
+  background: #559664;
+  background-size: 100%;
+}
+
 /*头部*/
-header { width: 100%; height: 270px; background: url(../img/top.jpg) center top no-repeat; }
-.header-box { margin: 0 auto; width: 1050px; height: 100%; }
-.header-box p { position: relative; top: 70px; width: 340px; color: #fff; text-shadow: #1f5a37 1px 1px 1px; font-size: 14px; line-height: 26px; }
-.header-box .box { margin: 20px auto; cursor: url(../img/a2.png),pointer; width: 80px; height: 80px; }
-.header-box .light { margin: 0 auto; width: 35px; height: 35px; background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 100%); border-radius: 50%; }
-.header-box .box1 { animation: twinkle 2s linear infinite alternate; position: relative; top: 0; left: 45px; }
-.header-box .box2 { animation: twinkle 2s linear 1s infinite alternate; position: relative; top: -30px; left: 5px; }
-@keyframes Light{
-	0%,50%,100%{ transform: scale(1); }
-	25%{ transform: scale(10); }
-	75%{ transform: scale(15); }
+header {
+  width: 100%;
+  height: 270px;
+  background: url(../img/top.jpg) center top no-repeat;
 }
-@keyframes twinkle{
-	0%{ transform: rotate(0deg) scale(1); }
-	25%{ transform: rotate(90deg) scale(0.5); }
-	50%{ transform: rotate(180deg) scale(0); }
-	100%{ transform: rotate(0deg) scale(0); }
+
+.header-box {
+  margin: 0 auto;
+  width: 1050px;
+  height: 100%;
 }
-.header-box .star{ position: relative; margin: 0 auto; width: 50px; height: 50px; }
-.header-box .spot{ position: absolute; top: 21px; left: 21px; width: 10px; height: 10px; border-radius: 50%; background-color: rgba(250, 234, 3, 1.0); box-shadow: 0px 5px 6px yellow, 0px -5px 6px yellow; }
-.header-box .srT{ position: absolute; left: 23px; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; }
-.header-box .srL{ position: absolute; top: 23px; width: 0; height: 0; border-top: 3px solid transparent; border-bottom: 3px solid transparent; }
-.header-box .sr1{ top: 0; border-bottom: 25px solid yellow; }
-.header-box .sr4{ bottom: 0; border-top: 25px solid yellow; }
-.header-box .sr2{ left: 5px; border-right: 20px solid yellow; }
-.header-box .sr3{ right: 5px; border-left: 20px solid yellow; }
-.header-box .album { position: absolute; top: 120px; right: 13%; cursor: url(../img/a2.png),pointer; width: 175px; height: 175px; background: url(../img/hbg.png) no-repeat; transition: transform 0.3s linear 0s; }
-.header-box .album img { width: 135px; height: 120px; margin: 20px 0 0 17px }
+
+.header-box p {
+  position: relative;
+  top: 70px;
+  width: 340px;
+  color: #fff;
+  text-shadow: #1f5a37 1px 1px 1px;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+/*设置了外边框，宽度，高度和手型光标*/
+.header-box .box {
+ margin: 20px auto;  /*外边距默认 */
+  cursor: url(../img/a2.png), pointer; /*手型光标 */
+  width: 80px;
+  height: 80px;
+}
+/* 
+附：cursor属性收集
+
+光标类型   CSS
+十字准心 cursor: crosshair;
+手 cursor: pointer;
+cursor: hand;
+写两个是为了照顾IE5，它只认hand。
+等待/沙漏 cursor: wait;
+帮助 cursor: help;
+无法释放 cursor: no-drop;
+文字/编辑 cursor: text;
+可移动对象 cursor: move;
+向上改变大小(North)   cursor: n-resize;
+向下改变大小(South)   cursor: s-resize;
+向右改变大小(East)   cursor: e-resize;
+向左改变大小(West)   cursor: w-resize;
+向上右改变大小(North East)   cursor: ne-resize;
+向上左改变大小(North West)   cursor: nw-resize;
+向下右改变大小(South East)   cursor: se-resize;
+向下左改变大小(South West)   cursor: sw-resize;
+自动 cursor: auto;
+禁止 cursor:not-allowed;
+处理中 cursor: progress;
+系统默认 cursor: default;
+用户自定义（可用动画） cursor: url(‘ # ‘);
+# = 光标文件地址    (注意文件格式必须为：.cur 或 .ani)。 */
+.header-box .light {
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+}
+
+.header-box .box1 {
+  animation: twinkle 2s linear infinite alternate;
+  position: relative;
+  top: 0;
+  left: 45px;
+}
+
+.header-box .box2 {
+  animation: twinkle 2s linear 1s infinite alternate;
+  position: relative;
+  top: -30px;
+  left: 5px;
+}
+
+@keyframes Light {
+  0%,50%,100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(10);
+  }
+
+  75% {
+    transform: scale(15);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(90deg) scale(0.5);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(0);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(0);
+  }
+}
+
+.header-box .star {
+  position: relative;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.header-box .spot {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(250, 234, 3, 1);
+  box-shadow: 0px 5px 6px yellow, 0px -5px 6px yellow;
+}
+
+.header-box .srT {
+  position: absolute;
+  left: 23px;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+
+.header-box .srL {
+  position: absolute;
+  top: 23px;
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.header-box .sr1 {
+  top: 0;
+  border-bottom: 25px solid yellow;
+}
+
+.header-box .sr4 {
+  bottom: 0;
+  border-top: 25px solid yellow;
+}
+
+.header-box .sr2 {
+  left: 5px;
+  border-right: 20px solid yellow;
+}
+
+.header-box .sr3 {
+  right: 5px;
+  border-left: 20px solid yellow;
+}
+
+.header-box .album {
+  position: absolute;
+  top: 120px;
+  right: 13%;
+  cursor: url(../img/a2.png), pointer;
+  width: 175px;
+  height: 175px;
+  background: url(../img/hbg.png) no-repeat;
+  transition: transform 0.3s linear 0s;
+}
+
+.header-box .album img {
+  width: 135px;
+  height: 120px;
+  margin: 20px 0 0 17px;
+}
+
 /*导航*/
-.nav { display: inline-block; background: rgba(56, 134, 72, 1); width: 100%; height: 40px; }
-.nav .title { margin: -40px 0 0 15%; width: 130px; color: #FFF; font-size: 30px; -webkit-box-reflect: below 0 -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }
-.nav ul {margin: 0 auto; width: 600px; height: 50px; font-size: 16px; }
-.nav ul li { float: left; margin: -8px 15px 0 15px; padding: 2px 0; height: 50px; line-height: 50px; }
-.nav ul li a { color: #fff; padding: 0 15px; }
-.nav ul .current { background-color: #538c09; border-radius: 0px 30px; }
-.nav ul li a:hover { background-color: #538c09; border-radius: 0px 30px; transition: background-color 0.3s linear 0s; }
+.nav {
+  display: inline-block;
+  background: rgba(56, 134, 72, 1);
+  width: 100%;
+  height: 40px;
+}
+
+.nav .title {
+  margin: -40px 0 0 15%;
+  width: 130px;
+  color: #fff;
+  font-size: 30px;
+  -webkit-box-reflect: below 0 -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white));
+}
+
+.nav ul {
+  margin: 0 auto;
+  width: 600px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.nav ul li {
+  float: left;
+  margin: -8px 15px 0 15px;
+  padding: 2px 0;
+  height: 50px;
+  line-height: 50px;
+}
+
+.nav ul li a {
+  color: #fff;
+  padding: 0 15px;
+}
+
+.nav ul .current {
+  background-color: #538c09;
+  border-radius: 0px 30px;
+}
+
+.nav ul li a:hover {
+  background-color: #538c09;
+  border-radius: 0px 30px;
+  transition: background-color 0.3s linear 0s;
+}
+
 /*修饰*/
-.leaf { background-color: #538c09; border-radius: 0px 30px; padding: 10px 20px; }
-.embellish .rocket { display: none; cursor: url(../img/a2.png),pointer; position: fixed; bottom: 40px; right: 10px; width: 71px; height: 135px; transition: all 0.6s; background: url(../img/e1.png); }
-.embellish .rocket:hover { transition: all 0.6s; background: url(../img/e2.png); }
+.leaf {
+  background-color: #538c09;
+  border-radius: 0px 30px;
+  padding: 10px 20px;
+}
+
+.embellish .rocket {
+  display: none;
+  cursor: url(../img/a2.png), pointer;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  width: 71px;
+  height: 135px;
+  transition: all 0.6s;
+  background: url(../img/e1.png);
+}
+
+.embellish .rocket:hover {
+  transition: all 0.6s;
+  background: url(../img/e2.png);
+}
+
 /*底部*/
-footer { overflow: hidden; margin-top: 66px; width: 100%; height: 80px; color: #222; background: #226039; font-size: 14px; line-height: 80px; text-align: center; }
+footer {
+  overflow: hidden;
+  margin-top: 66px;
+  width: 100%;
+  height: 80px;
+  color: #222;
+  background: #226039;
+  font-size: 14px;
+  line-height: 80px;
+  text-align: center;
+}
